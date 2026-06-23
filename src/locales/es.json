@@ -1,0 +1,26 @@
+{
+  "app": {
+    "title": "Vitre Vue",
+    "tagline": "Plantilla profesional Vue 3 + Vite + TypeScript"
+  },
+  "nav": {
+    "home": "Inicio",
+    "about": "Acerca de"
+  },
+  "home": {
+    "heading": "Bienvenido a Vitre Vue",
+    "description": "Un punto de partida escalable con enrutado por archivos, Pinia, i18n, Tailwind y Storybook.",
+    "counter": "El contador es {count}",
+    "increment": "Incrementar"
+  },
+  "about": {
+    "heading": "Acerca de esta plantilla",
+    "description": "CI/CD intercambiable, tooling moderno y una arquitectura limpia lista para producción."
+  },
+  "notFound": {
+    "heading": "Página no encontrada",
+    "description": "La página que buscas no existe.",
+    "back": "Volver al inicio"
+  },
+  "language": "Idioma"
+}

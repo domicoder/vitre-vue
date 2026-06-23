@@ -1,0 +1,15 @@
+// PostCSS integration mode for Tailwind CSS v4 (ALTERNATIVE to @tailwindcss/vite).
+//
+// To switch from the default Vite plugin integration to PostCSS:
+//   1. npm install -D @tailwindcss/postcss
+//   2. Remove `tailwindcss()` (and its import) from vite.config.ts
+//   3. Rename this file to `postcss.config.mjs`
+//
+// The CSS entry (`src/assets/styles/main.css`) stays the same: @import "tailwindcss";
+// See docs/tailwind-postcss.md for the full walkthrough.
+
+export default {
+  plugins: {
+    '@tailwindcss/postcss': {},
+  },
+}

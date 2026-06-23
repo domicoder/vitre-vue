@@ -1,0 +1,44 @@
+# Azure Pipelines CI for Azure Repos / Azure DevOps.
+# This is the PRIMARY pipeline for professional projects.
+# Runs the same checks as .github/workflows/ci.yml.
+# Safe to delete .github/workflows/ci.yml if you only use Azure DevOps.
+
+trigger:
+  branches:
+    include:
+      - main
+
+pr:
+  branches:
+    include:
+      - main
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+steps:
+  - task: NodeTool@0
+    displayName: 'Use Node.js 24'
+    inputs:
+      versionSpec: '24.x'
+
+  - script: npm ci
+    displayName: 'Install dependencies'
+
+  - script: npm run lint:check
+    displayName: 'Lint'
+
+  - script: npm run format:check
+    displayName: 'Format check'
+
+  - script: npm run typecheck
+    displayName: 'Type check'
+
+  - script: npm run test:cov
+    displayName: 'Unit tests + coverage'
+
+  - script: npm run build
+    displayName: 'Build app'
+
+  - script: npm run build-storybook
+    displayName: 'Build Storybook'

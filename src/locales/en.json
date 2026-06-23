@@ -1,0 +1,26 @@
+{
+  "app": {
+    "title": "Vitre Vue",
+    "tagline": "Professional Vue 3 + Vite + TypeScript template"
+  },
+  "nav": {
+    "home": "Home",
+    "about": "About"
+  },
+  "home": {
+    "heading": "Welcome to Vitre Vue",
+    "description": "A scalable starting point with file-based routing, Pinia, i18n, Tailwind and Storybook.",
+    "counter": "Count is {count}",
+    "increment": "Increment"
+  },
+  "about": {
+    "heading": "About this template",
+    "description": "Swappable CI/CD, modern tooling and a clean architecture ready for production."
+  },
+  "notFound": {
+    "heading": "Page not found",
+    "description": "The page you are looking for does not exist.",
+    "back": "Back to home"
+  },
+  "language": "Language"
+}
