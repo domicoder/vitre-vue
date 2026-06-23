@@ -3,7 +3,10 @@ import DefaultLayout from '@/layouts/default.vue'
 </script>
 
 <template>
-  <DefaultLayout>
-    <RouterView />
-  </DefaultLayout>
+  <!-- v-app provides the Vuetify layout/theme context. -->
+  <v-app>
+    <DefaultLayout>
+      <RouterView />
+    </DefaultLayout>
+  </v-app>
 </template>
