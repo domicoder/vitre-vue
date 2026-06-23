@@ -1,11 +1,11 @@
-<script setup lang="ts">
+<script setup>
 import { useI18n } from 'vue-i18n'
 
-import { SUPPORTED_LOCALES, type SupportedLocale } from '@/plugins/i18n'
+import { SUPPORTED_LOCALES } from '@/plugins/i18n'
 
 const { t, locale } = useI18n()
 
-function setLocale(value: SupportedLocale) {
+function setLocale(value) {
   locale.value = value
 }
 </script>
@@ -28,7 +28,7 @@ function setLocale(value: SupportedLocale) {
           <select
             :value="locale"
             class="rounded-md border border-slate-300 bg-white px-2 py-1 dark:border-slate-700 dark:bg-slate-900"
-            @change="setLocale(($event.target as HTMLSelectElement).value as SupportedLocale)"
+            @change="setLocale($event.target.value)"
           >
             <option v-for="code in SUPPORTED_LOCALES" :key="code" :value="code">
               {{ code.toUpperCase() }}

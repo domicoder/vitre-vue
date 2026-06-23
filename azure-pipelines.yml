@@ -31,9 +31,6 @@ steps:
   - script: npm run format:check
     displayName: 'Format check'
 
-  - script: npm run typecheck
-    displayName: 'Type check'
-
   - script: npm run test:cov
     displayName: 'Unit tests + coverage'
 

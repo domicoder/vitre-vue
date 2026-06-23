@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script setup>
 import DefaultLayout from '@/layouts/default.vue'
 </script>
 

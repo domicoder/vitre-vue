@@ -12,7 +12,6 @@ export default defineConfig({
     // VueRouter must be registered before the Vue plugin.
     VueRouter({
       routesFolder: 'src/pages',
-      dts: 'src/typed-router.d.ts',
     }),
     vue(),
     vueDevTools(),

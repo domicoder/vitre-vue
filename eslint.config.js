@@ -1,24 +1,26 @@
+import js from '@eslint/js'
 import pluginVue from 'eslint-plugin-vue'
-import { defineConfigWithVueTs, vueTsConfigs } from '@vue/eslint-config-typescript'
 import skipFormatting from '@vue/eslint-config-prettier/skip-formatting'
+import globals from 'globals'
 
-export default defineConfigWithVueTs(
-  {
-    name: 'app/files-to-lint',
-    files: ['**/*.{ts,mts,tsx,vue}'],
-  },
+export default [
   {
     name: 'app/files-to-ignore',
-    ignores: [
-      '**/dist/**',
-      '**/coverage/**',
-      '**/storybook-static/**',
-      '**/node_modules/**',
-      'src/typed-router.d.ts',
-    ],
+    ignores: ['**/dist/**', '**/coverage/**', '**/storybook-static/**', '**/node_modules/**'],
   },
-  pluginVue.configs['flat/recommended'],
-  vueTsConfigs.recommended,
+  js.configs.recommended,
+  ...pluginVue.configs['flat/recommended'],
+  {
+    name: 'app/language-options',
+    languageOptions: {
+      ecmaVersion: 'latest',
+      sourceType: 'module',
+      globals: {
+        ...globals.browser,
+        ...globals.node,
+      },
+    },
+  },
   {
     name: 'app/file-based-pages',
     files: ['src/pages/**/*.vue', 'src/layouts/**/*.vue'],
@@ -28,4 +30,4 @@ export default defineConfigWithVueTs(
     },
   },
   skipFormatting,
-)
+]

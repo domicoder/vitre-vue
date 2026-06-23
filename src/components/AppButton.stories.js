@@ -1,8 +1,7 @@
-import type { Meta, StoryObj } from '@storybook/vue3-vite'
-
 import AppButton from './AppButton.vue'
 
-const meta: Meta<typeof AppButton> = {
+/** @type {import('@storybook/vue3-vite').Meta} */
+const meta = {
   title: 'Components/AppButton',
   component: AppButton,
   tags: ['autodocs'],
@@ -25,8 +24,6 @@ const meta: Meta<typeof AppButton> = {
 
 export default meta
 
-type Story = StoryObj<typeof AppButton>
-
-export const Primary: Story = { args: { variant: 'primary' } }
-export const Secondary: Story = { args: { variant: 'secondary' } }
-export const Disabled: Story = { args: { disabled: true } }
+export const Primary = { args: { variant: 'primary' } }
+export const Secondary = { args: { variant: 'secondary' } }
+export const Disabled = { args: { disabled: true } }

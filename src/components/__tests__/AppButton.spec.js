@@ -23,7 +23,7 @@ describe('AppButton', () => {
     expect(wrapper.classes()).toContain('border')
   })
 
-  it('does not emit when disabled', async () => {
+  it('does not emit when disabled', () => {
     const wrapper = mount(AppButton, {
       props: { disabled: true },
       slots: { default: 'Disabled' },

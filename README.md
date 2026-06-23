@@ -1,13 +1,13 @@
 # Vitre Vue
 
-A professional, scalable **Vue 3 + Vite + TypeScript** application template with swappable CI/CD.
+A professional, scalable **Vue 3 + Vite (JavaScript)** application template with swappable CI/CD.
 
-`main` is clean TypeScript without Vuetify. Variants (TypeScript + Vuetify, JavaScript, JavaScript + Vuetify) live in dedicated branches.
+This is the **JavaScript** branch. `main` is clean TypeScript; see the other branches for TypeScript and Vuetify variants.
 
 ## Features
 
 - **Vue 3** (`<script setup>`) + **Vite 8**
-- **TypeScript** with `vue-tsc` type checking
+- **JavaScript** with ESLint flat config
 - **File-based routing** via Vue Router 5 (file-based routing is built into the core; no extra plugin)
 - **Pinia** for state management
 - **Vue I18n** (English / Spanish out of the box)
@@ -34,27 +34,26 @@ npm run dev
 
 ## Scripts
 
-| Script                    | Description                               |
-| ------------------------- | ----------------------------------------- |
-| `npm run dev`             | Start the Vite dev server                 |
-| `npm run build`           | Type-check (`vue-tsc`) and build for prod |
-| `npm run preview`         | Preview the production build              |
-| `npm run typecheck`       | Type-check without emitting               |
-| `npm run lint`            | ESLint with `--fix`                       |
-| `npm run lint:check`      | ESLint without fixing (CI)                |
-| `npm run format`          | Prettier write                            |
-| `npm run format:check`    | Prettier check (CI)                       |
-| `npm run test`            | Run unit tests once                       |
-| `npm run test:watch`      | Run unit tests in watch mode              |
-| `npm run test:cov`        | Run unit tests with coverage              |
-| `npm run storybook`       | Start Storybook on port 6006              |
-| `npm run build-storybook` | Build the static Storybook                |
+| Script                    | Description                  |
+| ------------------------- | ---------------------------- |
+| `npm run dev`             | Start the Vite dev server    |
+| `npm run build`           | Build for production         |
+| `npm run preview`         | Preview the production build |
+| `npm run lint`            | ESLint with `--fix`          |
+| `npm run lint:check`      | ESLint without fixing (CI)   |
+| `npm run format`          | Prettier write               |
+| `npm run format:check`    | Prettier check (CI)          |
+| `npm run test`            | Run unit tests once          |
+| `npm run test:watch`      | Run unit tests in watch mode |
+| `npm run test:cov`        | Run unit tests with coverage |
+| `npm run storybook`       | Start Storybook on port 6006 |
+| `npm run build-storybook` | Build the static Storybook   |
 
 ## Project structure
 
 ```
 src/
-  app/          # App.vue + main.ts entry
+  app/          # App.vue + main.js entry
   assets/       # global styles (Tailwind entry)
   components/   # reusable components (+ stories, tests)
   composables/  # reusable composition functions
@@ -78,8 +77,6 @@ Routes are generated from files in `src/pages/` by Vue Router 5:
 | `index.vue`     | `/`           |
 | `about.vue`     | `/about`      |
 | `[...path].vue` | 404 catch-all |
-
-Types are auto-generated into `src/typed-router.d.ts`.
 
 ## CI/CD
 
