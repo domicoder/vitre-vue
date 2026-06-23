@@ -34,13 +34,13 @@ jobs:
         run: npm run format:check
 
       - name: Type check
-        run: npm run typecheck
+        run: npm run type-check
 
       - name: Unit tests + coverage
         run: npm run test:cov
 
-      - name: Build app
-        run: npm run build
+      - name: Build (production)
+        run: npm run build:prod
 
       - name: Build Storybook
         run: npm run build-storybook
