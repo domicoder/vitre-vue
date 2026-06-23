@@ -31,14 +31,14 @@ steps:
   - script: npm run format:check
     displayName: 'Format check'
 
-  - script: npm run typecheck
+  - script: npm run type-check
     displayName: 'Type check'
 
   - script: npm run test:cov
     displayName: 'Unit tests + coverage'
 
-  - script: npm run build
-    displayName: 'Build app'
+  - script: npm run build:prod
+    displayName: 'Build (production)'
 
   - script: npm run build-storybook
     displayName: 'Build Storybook'
