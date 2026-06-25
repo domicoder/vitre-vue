@@ -5,7 +5,10 @@
   },
   "nav": {
     "home": "Inicio",
-    "about": "Acerca de"
+    "about": "Acerca de",
+    "dashboard": "Panel",
+    "users": "Usuarios",
+    "login": "Iniciar sesión"
   },
   "home": {
     "heading": "Bienvenido a Vitre Vue",
@@ -16,6 +19,32 @@
   "about": {
     "heading": "Acerca de esta plantilla",
     "description": "CI/CD intercambiable, tooling moderno y una arquitectura limpia lista para producción."
+  },
+  "dashboard": {
+    "heading": "Panel",
+    "description": "Una ruta anidada de ejemplo renderizada desde src/pages/dashboard.vue.",
+    "metricUsers": "Usuarios activos",
+    "metricSessions": "Sesiones hoy",
+    "metricUptime": "Disponibilidad"
+  },
+  "users": {
+    "heading": "Usuarios",
+    "description": "Una ruta de lista de ejemplo. Selecciona un usuario para abrir una ruta dinámica.",
+    "view": "Ver"
+  },
+  "userDetail": {
+    "heading": "Usuario #{id}",
+    "description": "Una ruta dinámica de ejemplo renderizada desde src/pages/users/[id].vue.",
+    "back": "Volver a usuarios"
+  },
+  "login": {
+    "heading": "Iniciar sesión",
+    "description": "Una ruta de ejemplo dentro de una carpeta anidada (src/pages/auth/login.vue).",
+    "email": "Correo",
+    "emailPlaceholder": "tu@ejemplo.com",
+    "password": "Contraseña",
+    "passwordPlaceholder": "Tu contraseña",
+    "submit": "Iniciar sesión"
   },
   "notFound": {
     "heading": "Página no encontrada",

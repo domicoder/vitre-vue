@@ -18,10 +18,10 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Use Node.js 24
+      - name: Use Node.js (from .nvmrc)
         uses: actions/setup-node@v4
         with:
-          node-version: 24
+          node-version-file: '.nvmrc'
           cache: npm
 
       - name: Install dependencies
@@ -36,8 +36,8 @@ jobs:
       - name: Type check
         run: npm run type-check
 
-      - name: Unit tests + coverage
-        run: npm run test:cov
+      - name: Unit tests
+        run: npm run test:unit
 
       - name: Build (production)
         run: npm run build:prod
