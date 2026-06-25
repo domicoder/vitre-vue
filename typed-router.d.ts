@@ -38,6 +38,34 @@ declare module 'vue-router/auto-routes' {
       never
     >
     '/about': RouteRecordInfo<'/about', '/about', Record<never, never>, Record<never, never>, never>
+    '/auth/login': RouteRecordInfo<
+      '/auth/login',
+      '/auth/login',
+      Record<never, never>,
+      Record<never, never>,
+      never
+    >
+    '/dashboard': RouteRecordInfo<
+      '/dashboard',
+      '/dashboard',
+      Record<never, never>,
+      Record<never, never>,
+      never
+    >
+    '/users/': RouteRecordInfo<
+      '/users/',
+      '/users',
+      Record<never, never>,
+      Record<never, never>,
+      never
+    >
+    '/users/[id]': RouteRecordInfo<
+      '/users/[id]',
+      '/users/:id',
+      { id: ParamValue<true> },
+      { id: ParamValue<false> },
+      never
+    >
   }
 
   /**
@@ -65,6 +93,26 @@ declare module 'vue-router/auto-routes' {
       routes: '/about'
       views: never
       pathParamNames: never
+    }
+    'src/pages/auth/login.vue': {
+      routes: '/auth/login'
+      views: never
+      pathParamNames: never
+    }
+    'src/pages/dashboard.vue': {
+      routes: '/dashboard'
+      views: never
+      pathParamNames: never
+    }
+    'src/pages/users/index.vue': {
+      routes: '/users/'
+      views: never
+      pathParamNames: never
+    }
+    'src/pages/users/[id].vue': {
+      routes: '/users/[id]'
+      views: never
+      pathParamNames: 'id'
     }
   }
 

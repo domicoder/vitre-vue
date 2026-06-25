@@ -21,6 +21,9 @@ function setLocale(value) {
         <nav class="flex items-center gap-6 text-sm font-medium">
           <RouterLink to="/" class="hover:text-brand">{{ t('nav.home') }}</RouterLink>
           <RouterLink to="/about" class="hover:text-brand">{{ t('nav.about') }}</RouterLink>
+          <RouterLink to="/dashboard" class="hover:text-brand">{{ t('nav.dashboard') }}</RouterLink>
+          <RouterLink to="/users" class="hover:text-brand">{{ t('nav.users') }}</RouterLink>
+          <RouterLink to="/auth/login" class="hover:text-brand">{{ t('nav.login') }}</RouterLink>
         </nav>
 
         <label class="flex items-center gap-2 text-sm">
