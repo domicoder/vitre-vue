@@ -1,11 +1,14 @@
 {
   "app": {
     "title": "Vitre Vue",
-    "tagline": "Professional Vue 3 + Vite + TypeScript template"
+    "tagline": "Vue 3 Starter Template with Vite + TypeScript for mocking apps quickly."
   },
   "nav": {
     "home": "Home",
-    "about": "About"
+    "about": "About",
+    "dashboard": "Dashboard",
+    "users": "Users",
+    "login": "Login"
   },
   "home": {
     "heading": "Welcome to Vitre Vue",
@@ -16,6 +19,32 @@
   "about": {
     "heading": "About this template",
     "description": "Swappable CI/CD, modern tooling and a clean architecture ready for production."
+  },
+  "dashboard": {
+    "heading": "Dashboard",
+    "description": "An example nested route rendered from src/pages/dashboard.vue.",
+    "metricUsers": "Active users",
+    "metricSessions": "Sessions today",
+    "metricUptime": "Uptime"
+  },
+  "users": {
+    "heading": "Users",
+    "description": "An example list route. Select a user to open a dynamic route.",
+    "view": "View"
+  },
+  "userDetail": {
+    "heading": "User #{id}",
+    "description": "An example dynamic route rendered from src/pages/users/[id].vue.",
+    "back": "Back to users"
+  },
+  "login": {
+    "heading": "Sign in",
+    "description": "An example route under a nested folder (src/pages/auth/login.vue).",
+    "email": "Email",
+    "emailPlaceholder": "you@example.com",
+    "password": "Password",
+    "passwordPlaceholder": "Your password",
+    "submit": "Sign in"
   },
   "notFound": {
     "heading": "Page not found",
