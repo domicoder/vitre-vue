@@ -17,10 +17,13 @@ pool:
   vmImage: 'ubuntu-latest'
 
 steps:
+  - bash: echo "##vso[task.setvariable variable=nodeVersion]$(cat .nvmrc)"
+    displayName: 'Read Node version from .nvmrc'
+
   - task: NodeTool@0
-    displayName: 'Use Node.js 24'
+    displayName: 'Use Node.js (from .nvmrc)'
     inputs:
-      versionSpec: '24.x'
+      versionSpec: '$(nodeVersion)'
 
   - script: npm ci
     displayName: 'Install dependencies'
@@ -31,8 +34,8 @@ steps:
   - script: npm run format:check
     displayName: 'Format check'
 
-  - script: npm run test:cov
-    displayName: 'Unit tests + coverage'
+  - script: npm run test:unit
+    displayName: 'Unit tests'
 
   - script: npm run build:prod
     displayName: 'Build (production)'
