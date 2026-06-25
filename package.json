@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "type": "module",
-  "description": "Professional Vue 3 + Vite + TypeScript application template with swappable CI/CD.",
+  "description": "Vue 3 Starter Template with Vite + TypeScript for mocking apps quickly.",
   "engines": {
     "node": ">=24"
   },
@@ -28,7 +28,8 @@
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "test": "vitest run",
-    "test:watch": "vitest",
+    "test:unit": "vitest run",
+    "test:unit:watch": "vitest",
     "test:cov": "vitest run --coverage",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",

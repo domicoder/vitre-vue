@@ -1,6 +1,6 @@
 # Vitre Vue
 
-A professional, scalable **Vue 3 + Vite + TypeScript** application template with swappable CI/CD.
+Vue 3 Starter Template with **Vite + TypeScript** for mocking apps quickly.
 
 `main` is clean TypeScript without Vuetify. Variants (TypeScript + Vuetify, JavaScript, JavaScript + Vuetify) live in dedicated branches.
 
@@ -21,7 +21,7 @@ A professional, scalable **Vue 3 + Vite + TypeScript** application template with
 ## Requirements
 
 - **Node.js 24 LTS** (see [`.nvmrc`](./.nvmrc)). Run `nvm use` to match.
-- **npm** is the default package manager (professional projects use npm). See [Using pnpm](#using-pnpm) to switch.
+- **npm** is the default package manager. See [Using pnpm](#using-pnpm) to switch.
 
 ## Getting started
 
@@ -32,23 +32,51 @@ cp .env.example .env
 npm run dev
 ```
 
+## Validation
+
+Run the same checks CI runs, in order. All must pass before opening a PR or creating derived branches:
+
+```bash
+npm ci                   # clean, reproducible install
+npm run lint:check       # ESLint
+npm run format:check     # Prettier
+npm run type-check       # vue-tsc
+npm run test:unit        # Vitest unit tests
+npm run build:prod       # production build
+npm run build-storybook  # Storybook build
+```
+
+The `pre-push` Git hook runs `type-check`, `test:unit`, and `build:prod` automatically before every push.
+
 ## Scripts
 
-| Script                    | Description                               |
-| ------------------------- | ----------------------------------------- |
-| `npm run dev`             | Start the Vite dev server                 |
-| `npm run build`           | Type-check (`vue-tsc`) and build for prod |
-| `npm run preview`         | Preview the production build              |
-| `npm run typecheck`       | Type-check without emitting               |
-| `npm run lint`            | ESLint with `--fix`                       |
-| `npm run lint:check`      | ESLint without fixing (CI)                |
-| `npm run format`          | Prettier write                            |
-| `npm run format:check`    | Prettier check (CI)                       |
-| `npm run test`            | Run unit tests once                       |
-| `npm run test:watch`      | Run unit tests in watch mode              |
-| `npm run test:cov`        | Run unit tests with coverage              |
-| `npm run storybook`       | Start Storybook on port 6006              |
-| `npm run build-storybook` | Build the static Storybook                |
+| Script                    | Description                                      |
+| ------------------------- | ------------------------------------------------ |
+| `npm run dev`             | Start the Vite dev server (`development` mode)   |
+| `npm run dev:local`       | Dev server in `local` mode                       |
+| `npm run dev:staging`     | Dev server in `staging` mode                     |
+| `npm run build`           | Type-check (`vue-tsc`) then build for production |
+| `npm run build-only`      | Build without type-checking                      |
+| `npm run build:dev`       | Build in `development` mode                      |
+| `npm run build:staging`   | Build in `staging` mode                          |
+| `npm run build:prod`      | Build in `production` mode                       |
+| `npm run build-test`      | Alias of `build:dev` (CI/test build)             |
+| `npm run build-prod`      | Alias of `build:prod`                            |
+| `npm run preview`         | Preview the production build                     |
+| `npm run preview:dev`     | Preview a `development` build                    |
+| `npm run preview:staging` | Preview a `staging` build                        |
+| `npm run preview:prod`    | Preview a `production` build                     |
+| `npm run type-check`      | Type-check with `vue-tsc --build`                |
+| `npm run lint`            | ESLint with `--fix`                              |
+| `npm run lint:check`      | ESLint without fixing (CI)                       |
+| `npm run format`          | Prettier write                                   |
+| `npm run format:check`    | Prettier check (CI)                              |
+| `npm run test`            | Run unit tests once                              |
+| `npm run test:unit`       | Run unit tests once (CI)                         |
+| `npm run test:unit:watch` | Run unit tests in watch mode                     |
+| `npm run test:cov`        | Run unit tests with coverage                     |
+| `npm run storybook`       | Start Storybook on port 6006                     |
+| `npm run build-storybook` | Build the static Storybook                       |
 
 ## Project structure
 
@@ -73,13 +101,17 @@ test/           # test setup
 
 Routes are generated from files in `src/pages/` by Vue Router 5:
 
-| File            | Route         |
-| --------------- | ------------- |
-| `index.vue`     | `/`           |
-| `about.vue`     | `/about`      |
-| `[...path].vue` | 404 catch-all |
+| File              | Route         |
+| ----------------- | ------------- |
+| `index.vue`       | `/`           |
+| `about.vue`       | `/about`      |
+| `dashboard.vue`   | `/dashboard`  |
+| `users/index.vue` | `/users`      |
+| `users/[id].vue`  | `/users/:id`  |
+| `auth/login.vue`  | `/auth/login` |
+| `[...path].vue`   | 404 catch-all |
 
-Types are auto-generated into `src/typed-router.d.ts`.
+Types are auto-generated into `src/typed-router.d.ts`. See [docs/routing.md](./docs/routing.md) for how to add routes and how to disable file-based routing.
 
 ## CI/CD
 

@@ -1,5 +1,5 @@
 # Azure Pipelines CI for Azure Repos / Azure DevOps.
-# This is the PRIMARY pipeline for professional projects.
+# This is the PRIMARY pipeline for ready to production projects.
 # Runs the same checks as .github/workflows/ci.yml.
 # Safe to delete .github/workflows/ci.yml if you only use Azure DevOps.
 
@@ -17,10 +17,13 @@ pool:
   vmImage: 'ubuntu-latest'
 
 steps:
+  - bash: echo "##vso[task.setvariable variable=nodeVersion]$(cat .nvmrc)"
+    displayName: 'Read Node version from .nvmrc'
+
   - task: NodeTool@0
-    displayName: 'Use Node.js 24'
+    displayName: 'Use Node.js (from .nvmrc)'
     inputs:
-      versionSpec: '24.x'
+      versionSpec: '$(nodeVersion)'
 
   - script: npm ci
     displayName: 'Install dependencies'
@@ -34,8 +37,8 @@ steps:
   - script: npm run type-check
     displayName: 'Type check'
 
-  - script: npm run test:cov
-    displayName: 'Unit tests + coverage'
+  - script: npm run test:unit
+    displayName: 'Unit tests'
 
   - script: npm run build:prod
     displayName: 'Build (production)'
