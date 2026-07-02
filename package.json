@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "type": "module",
-  "description": "Professional Vue 3 + Vite (JavaScript) application template with swappable CI/CD.",
+  "description": "Vue 3 Starter Template with Vite (JavaScript) for mocking apps quickly.",
   "engines": {
     "node": ">=24"
   },

@@ -1,7 +1,7 @@
 {
   "app": {
     "title": "Vitre Vue",
-    "tagline": "Plantilla profesional Vue 3 + Vite + TypeScript"
+    "tagline": "Plantilla de inicio Vue 3 con Vite para maquetar apps rápidamente"
   },
   "nav": {
     "home": "Inicio",

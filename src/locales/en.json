@@ -1,7 +1,7 @@
 {
   "app": {
     "title": "Vitre Vue",
-    "tagline": "Professional Vue 3 + Vite + TypeScript template"
+    "tagline": "Vue 3 Starter Template with Vite for mocking apps quickly"
   },
   "nav": {
     "home": "Home",
