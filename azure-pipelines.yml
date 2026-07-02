@@ -1,5 +1,5 @@
 # Azure Pipelines CI for Azure Repos / Azure DevOps.
-# This is the PRIMARY pipeline for professional projects.
+# This is the PRIMARY pipeline for ready to production projects.
 # Runs the same checks as .github/workflows/ci.yml.
 # Safe to delete .github/workflows/ci.yml if you only use Azure DevOps.
 

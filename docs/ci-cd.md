@@ -31,7 +31,7 @@ Keeping the steps identical guarantees that moving a project between Azure Repos
 
 ## When to use which
 
-### Azure Pipelines (primary, professional projects)
+### Azure Pipelines (primary, ready to production projects)
 
 - Your repository lives in **Azure Repos / Azure DevOps**.
 - You need Azure-native release pipelines, environments, approvals, or service connections.

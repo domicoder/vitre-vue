@@ -1,6 +1,6 @@
 # Vitre Vue
 
-A professional, scalable **Vue 3 + Vite (JavaScript)** application template with swappable CI/CD.
+Vue 3 Starter Template with **Vite (JavaScript)** for mocking apps quickly.
 
 This is the **JavaScript** branch. `main` is clean TypeScript; see the other branches for TypeScript and Vuetify variants.
 
@@ -21,7 +21,7 @@ This is the **JavaScript** branch. `main` is clean TypeScript; see the other bra
 ## Requirements
 
 - **Node.js 24 LTS** (see [`.nvmrc`](./.nvmrc)). Run `nvm use` to match.
-- **npm** is the default package manager (professional projects use npm). See [Using pnpm](#using-pnpm) to switch.
+- **npm** is the default package manager. See [Using pnpm](#using-pnpm) to switch.
 
 ## Getting started
 
